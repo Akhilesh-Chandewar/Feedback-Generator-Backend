@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { winstonLoggerOptions } from './logger/logger.service';
 import { LoggerModule } from './logger/logger.module';
 import { DatabaseModule } from './database/database.module';
+import { HealthcheckModule } from './routes/healthcheck/healthcheck.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { DatabaseModule } from './database/database.module';
     WinstonModule.forRoot(winstonLoggerOptions),
     LoggerModule,
     DatabaseModule,
+    HealthcheckModule,
   ],
   controllers: [AppController],
   providers: [AppService],

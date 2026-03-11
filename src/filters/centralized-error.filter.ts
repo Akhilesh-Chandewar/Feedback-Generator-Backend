@@ -22,13 +22,18 @@ export class CentralizedErrorFilter implements ExceptionFilter {
     const message =
       exception instanceof HttpException
         ? exception.getResponse()
-        : 'Internal server error';
+        : (exception as Error)?.message || 'Internal server error';
+
+    console.error(
+      `HTTP ${status} - ${request?.method} ${request?.url}`,
+      exception instanceof Error ? exception.stack : exception,
+    );
 
     const errorResponse = {
       statusCode: status,
       timestamp: new Date().toISOString(),
-      path: request.url,
-      method: request.method,
+      path: request?.url || 'unknown',
+      method: request?.method || 'unknown',
       message,
     };
 
