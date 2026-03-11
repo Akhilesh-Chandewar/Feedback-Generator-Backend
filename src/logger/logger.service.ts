@@ -1,3 +1,4 @@
+import { Injectable } from '@nestjs/common';
 import { WinstonModuleOptions } from 'nest-winston';
 import * as winston from 'winston';
 import 'winston-daily-rotate-file';
@@ -25,3 +26,6 @@ export const winstonLoggerOptions: WinstonModuleOptions = {
     }),
   ],
 };
+
+@Injectable()
+export class LoggerService {}
