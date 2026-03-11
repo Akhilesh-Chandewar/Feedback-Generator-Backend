@@ -7,6 +7,7 @@ import { winstonLoggerOptions } from './logger/logger.service';
 import { LoggerModule } from './logger/logger.module';
 import { DatabaseModule } from './database/database.module';
 import { HealthcheckModule } from './routes/healthcheck/healthcheck.module';
+import { FeedbackGeneratorModule } from './routes/feedback-generator/feedback-generator.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { HealthcheckModule } from './routes/healthcheck/healthcheck.module';
     LoggerModule,
     DatabaseModule,
     HealthcheckModule,
+    FeedbackGeneratorModule,
   ],
   controllers: [AppController],
   providers: [AppService],
