@@ -14,6 +14,9 @@ const RETRY_INTERVAL = 5000;
 
 @Injectable()
 export class DatabaseService implements OnModuleInit, OnApplicationShutdown {
+  getModel(arg0: string) {
+    throw new Error('Method not implemented.');
+  }
   private retryCount = 0;
   private isConnected = false;
 
